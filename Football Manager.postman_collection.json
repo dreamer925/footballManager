@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "7628e292-ab0a-448d-803c-f21c318b26b8",
+		"name": "Football Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18912504"
+	},
+	"item": [
+		{
+			"name": "get all teams",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get team with id=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Paris Saint-Germain\",\r\n    \"fee\": 2.20,\r\n    \"account\": 1600000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "team`s fee validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Paris\",\r\n    \"fee\": 12,\r\n    \"account\": 1600000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit a team",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bayern Munich\",\r\n    \"fee\": 1.80,\r\n    \"account\": 200000.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kylian\",\r\n    \"surname\": \"Mbappé\",\r\n    \"age\": 25,\r\n    \"monthsOfExperience\": 64,\r\n    \"transferRate\": 246000.00,\r\n    \"teamName\": \"Paris Saint-Germain\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/player",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "player`s age validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Kylian\",\r\n    \"surname\": \"Mbappé\",\r\n    \"age\": 25,\r\n    \"monthsOfExperience\": 64,\r\n    \"transferRate\": 246000.00,\r\n    \"teamName\": \"Paris Saint-Germain\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/player",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"player"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a team",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entity not found excepption",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a player",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/player/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"player",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "not enough founds to transfer the player exception",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team/transfer?playerId=4&fromTeamId=2&toTeamId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "playerId",
+							"value": "4"
+						},
+						{
+							"key": "fromTeamId",
+							"value": "2"
+						},
+						{
+							"key": "toTeamId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer the player",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/team/transfer?playerId=6&fromTeamId=3&toTeamId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"team",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "playerId",
+							"value": "6"
+						},
+						{
+							"key": "fromTeamId",
+							"value": "3"
+						},
+						{
+							"key": "toTeamId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,23 @@
+services:
+  db:
+    container_name: footballManager
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: footballManager
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - db:/data/mysql
+      - ./db/data.sql:/docker-entrypoint-initdb.d/data.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - db
+    restart: always
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
